@@ -397,17 +397,11 @@ class Html2Text {
 						$output = "[$output]";
 					}
 				} else {
-					if ($href == $output || $href == "mailto:$output" || $href == "http://$output" || $href == "https://$output") {
-						// link to the same address: just use link
-						$output;
+					if ($output) {
+						$output = "[$output]($href)";
 					} else {
-						// replace it
-						if ($output) {
-							$output = "[$output]($href)";
-						} else {
-							// empty string
-							$output = $href;
-						}
+						// empty string
+						$output = $href;
 					}
 				}
 
