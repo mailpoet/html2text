@@ -372,7 +372,7 @@ class Html2Text {
 
 			case "a":
 				// links are returned in [text](link) format
-				$href = $node->getAttribute("href");
+				$href = urldecode($node->getAttribute("href"));
 
 				$output = trim($output);
 
